@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 10vmin;
   pointer-events: none;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #829dd1b0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +35,22 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.navbar1 {
+  height: 2rem;
+  margin-top: 3rem;
+}
+
+.navbar1 a {
+  padding: 1rem;
+  border: solid 2px #3e4d52;
+  margin: 1rem;
+  border-radius: .5rem;
+}
+
+.marca1 {
+  background-color: #3e4d52;
+  color: #61dafb;
+  font-weight: bold;
 }

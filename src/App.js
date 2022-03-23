@@ -1,26 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
-import Desafios from './Desafios.js';
+import {Desafios} from './componentes/desafio2cartWidgetILC/ItemListContainer.js';
+import {NavBar} from './componentes/desafio1navBar/NavBar'
 
-function App(props) {
-  
-  console.log(props.name);
+
+function App() {
+
+  const greeting = "Bienvenido al proyecto Frankestein, esta en proceso de creación";
 
   return (
     <div className="App">
-      <nav className="navbar1">
-          <a className='marca1'>Marca RANDOM</a>
-          <a href='#'>Inicio</a>
-          <a href='#'>Productos</a>
-          <a href='#'>Quienes somos</a>
-          <a href='#'>Contacto</a>
-          <a href='#'>Perfil</a>
-        </nav>
+
+      <NavBar />
+
       <header className="App-header">
         
-        <section className='card1'> 
-      
+        <section> 
+          <Desafios name={greeting}/>
         </section>
+
         <p>
           Keep moving forward!
         </p>

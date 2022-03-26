@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import {Desafios} from './componentes/desafio2cartWidgetILC/ItemListContainer.js';
-import {NavBar} from './componentes/desafio1navBar/NavBar'
+import {NavBar} from './componentes/desafio1navBar/NavBar';
+import {Botonete, UsandoHookUseState} from './componentes/desafio3onAdd/UsandoHookUseState'
 
 
 function App() {
@@ -18,6 +19,10 @@ function App() {
         <section> 
           <Desafios name={greeting}/>
         </section>
+
+        <div>
+          <Botonete />
+        </div>
 
         <p>
           Keep moving forward!

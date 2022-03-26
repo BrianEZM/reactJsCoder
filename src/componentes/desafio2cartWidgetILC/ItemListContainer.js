@@ -1,5 +1,5 @@
 
-export const Desafios = ({name}) => {
+export const ItemListContainer = ({name}) => {
 
     // var nombre1 = prompt('¿cual es tu nombre');
     
@@ -7,6 +7,7 @@ export const Desafios = ({name}) => {
     return (
         <>
             <h1> {name} </h1>
+            
         </>
     );
 };

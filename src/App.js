@@ -1,14 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
-import {Desafios} from './componentes/desafio2cartWidgetILC/ItemListContainer.js';
+import {ItemListContainer} from './componentes/desafio2cartWidgetILC/ItemListContainer.js';
 import {NavBar} from './componentes/desafio1navBar/NavBar';
-import {Botonete, UsandoHookUseState} from './componentes/desafio3onAdd/UsandoHookUseState'
+import {ItemCount} from './componentes/desafio3onAdd/ItemCountUseState'
 
 
 function App() {
 
   const greeting = "Bienvenido al proyecto Frankestein, esta en proceso de creación";
-
+  
+  const onAdd = (contador) => {
+    console.log(`Agregaste ${contador} productos`)
+  };
+    
   return (
     <div className="App">
 
@@ -17,11 +21,11 @@ function App() {
       <header className="App-header">
         
         <section> 
-          <Desafios name={greeting}/>
+          <ItemListContainer name={greeting}/>
         </section>
 
         <div>
-          <Botonete />
+          <ItemCount stock={10} initial={1} onAdd={onAdd}/>
         </div>
 
         <p>

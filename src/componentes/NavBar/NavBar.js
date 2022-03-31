@@ -1,6 +1,6 @@
-import { CartWidget } from "../desafio2cartWidgetILC/CartWidget";
+import { CartWidget } from "../ItemListContainer/CartWidget";
 
-export const NavBar = ({}) => {
+export const NavBar = () => {
 
     return (
         <>

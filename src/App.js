@@ -1,8 +1,8 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import {ItemListContainer} from './componentes/desafio2cartWidgetILC/ItemListContainer.js';
-import {NavBar} from './componentes/desafio1navBar/NavBar';
-import {ItemCount} from './componentes/desafio3onAdd/ItemCountUseState'
+import {ItemListContainer} from './componentes/ItemListContainer/ItemListContainer';
+import {NavBar} from './componentes/NavBar/NavBar';
+import {ItemCount} from './componentes/ItemCount/ItemCount'
 
 
 function App() {

@@ -9,7 +9,7 @@ export const Item = (props) => {
             <h1>Promo: {props.title}</h1>
             <h2>Cantidad: {props.stock}</h2>
             <p>Precio: {props.price}</p>
-            {/* <img src={props.picture}>Descripcion: </img> */}
+            <img src={props.imag}/>
         </div>
 
     )

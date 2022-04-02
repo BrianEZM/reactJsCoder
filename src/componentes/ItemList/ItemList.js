@@ -13,7 +13,7 @@ export const ItemList = ({productos}) => {
                 title={producto.title} 
                 stock={producto.stock}
                 price={producto.price}
-                // picture={producto.picture}
+                imag={producto.imag}
                 />
             })}
         </>

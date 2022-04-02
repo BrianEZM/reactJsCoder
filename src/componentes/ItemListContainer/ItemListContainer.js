@@ -6,9 +6,9 @@ import { ItemList } from '../ItemList/ItemList'
 
 
 const productosIniciales = [
-    {title: "Tatuaje brazo", id: 1, price: 5000, stock: 7},
-    {title: "Tatuaje pierna", id: 2, price: 6000, stock: 5},
-    {title: "Tatuaje espalda", id: 3, price: 7000, stock: 3},
+    {title: "Tatuaje brazo", id: 1, price: 5000, stock: 7, imag: "imgs/tatuajeBrazo.jpg"},
+    {title: "Tatuaje pierna", id: 2, price: 6000, stock: 5, imag: "imgs/tatuajePierna.jpg"},
+    {title: "Tatuaje espalda", id: 3, price: 7000, stock: 3, imag: "imgs/tatuajeEspalda.jpg"},
 ];
 
 const promesa1 = new Promise ((res, rej) => {
@@ -37,9 +37,10 @@ export const ItemListContainer = ({name}) => {
 
     return (
         <>
+            <h1> {name} </h1>
             {loading ? <p>Loading, es decir ESPERE POR FAVOR</p> : 
             <ItemList productos={productos}/> }
-            <h1> {name} </h1>
+            
         </>
     );
 };

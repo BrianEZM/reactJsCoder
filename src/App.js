@@ -3,6 +3,7 @@ import './App.css';
 import {ItemListContainer} from './componentes/ItemListContainer/ItemListContainer';
 import {NavBar} from './componentes/NavBar/NavBar';
 import {ItemCount} from './componentes/ItemCount/ItemCount'
+import { ItemDetailContainer } from './componentes/ItemDetailContainer/ItemDetailContainer' 
 
 
 function App() {
@@ -24,9 +25,15 @@ function App() {
           <ItemListContainer name={greeting}/>
         </section>
 
+        <section> 
+          <ItemDetailContainer />
+        </section>
+
         <div>
           <ItemCount stock={10} initial={1} onAdd={onAdd}/>
         </div>
+
+        
 
         <p>
           Keep moving forward!

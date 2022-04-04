@@ -44,13 +44,3 @@ export const ItemListContainer = ({name}) => {
         </>
     );
 };
-
-// {productos.map((producto) => {
-//     return (
-//         <div>
-//             <h1>Hola la puta que me pario</h1>
-//         </div>
-//     )
-// })}
-
-// export default Desafios;

@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import { ItemList } from '../ItemList/ItemList'
 
 // USAR MAP PARA RENDERIZAR EL ARRAY "PRODUCTOS" (KEY, ID)

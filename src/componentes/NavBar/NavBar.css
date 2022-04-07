@@ -1,0 +1,11 @@
+.navbar1 img {
+    height: 50px;
+    display: inline-block;
+    /* align-items: center;
+    justify-content: center; */
+    /* margin: auto 0; */
+}
+
+.navbar1 {
+    margin-bottom: 5rem;
+}

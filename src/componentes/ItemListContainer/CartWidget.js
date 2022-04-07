@@ -1,11 +1,11 @@
 import { FaOpencart } from 'react-icons/fa';
-
+import { Link } from 'react-router-dom';  
 
 export const CartWidget = () => {
 
     return (
 
-        <a href='#'> <FaOpencart/> </a>
+        <Link to='#'> <FaOpencart/> </Link>
 
     );
 };

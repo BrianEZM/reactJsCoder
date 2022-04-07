@@ -1,15 +1,15 @@
 
 
-export const Item = (props) => {
+export const Item = ({key,title,stock,price,imag}) => {
         
     
     return (
 
         <div>
-            <h1>Promo: {props.title}</h1>
-            <h2>Cantidad: {props.stock}</h2>
-            <p>Precio: {props.price}</p>
-            <img src={props.imag}/>
+            <h1>Promo: {title}</h1>
+            <h2>Cantidad: {stock}</h2>
+            <p>Precio: {price}</p>
+            <img src={imag} alt="imgDetalle"/>
         </div>
 
     )

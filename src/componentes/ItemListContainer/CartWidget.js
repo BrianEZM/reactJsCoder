@@ -5,7 +5,7 @@ export const CartWidget = () => {
 
     return (
 
-        <Link to='#'> <FaOpencart/> </Link>
+        <Link to='/cart'> <FaOpencart/> </Link>
 
     );
 };

@@ -1,6 +1,6 @@
 
 
-export const Item = ({key,title,stock,price,imag}) => {
+export const Item = ({title,stock,price,imag}) => {
         
     
     return (

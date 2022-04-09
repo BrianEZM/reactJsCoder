@@ -5,13 +5,18 @@ import { NavBar } from './componentes/NavBar/NavBar';
 // import { CustomButton } from './componentes/CustomButton/CustomButton';
 import { ItemCount } from './componentes/ItemCount/ItemCount'
 import { ItemDetailContainer } from './componentes/ItemDetailContainer/ItemDetailContainer';
-import { BrowserRouter } from 'react-router-dom';
+import { Cart } from './componentes/Cart/Cart';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-function App() {
+
+
+
+
+const App = () => {
 
   const greeting = "Bienvenido al proyecto Frankestein, esta en proceso de creación";
   
-  const categoriasMenu = [{id:1, link:"Inicio", route:"/categorias/Inicio"},{id:2,link:"Productos", route:"/categorias/productos",},{id:3, link:"Contacto", route:"/categorias/contacto"}, {id:4, link:"Quienes somos", route:"/categorias/quienesSomos"}];
+
 
   const onAdd = (contador) => {
     console.log(`Agregaste ${contador} productos`)
@@ -20,30 +25,36 @@ function App() {
   return (
 
     <BrowserRouter>
-    <div className="App">
-      <NavBar categoriasMenu={categoriasMenu}/>
-      <header className="App-header">
-        <section> 
-          <ItemListContainer name={greeting}/>
-        </section>
+      <div className="App">
+        <NavBar />
 
-        <section> 
-          <ItemDetailContainer />
-        </section>
-        <div>
-          <ItemCount stock={10} initial={1} onAdd={onAdd}/>
-        </div>
-
-        {/* <div>
-          <CustomButton title="VER DETALLE"/>
-        </div> */}
-
-        <p>
-          Keep moving forward!
-        </p>
+        <Routes>
         
-      </header>
-    </div>
+            <Route path="/" element={<ItemListContainer greeting={greeting}/>} />
+            <Route path="/categoriaMenu/:id" element={<ItemListContainer greeting={greeting}/>}/>
+            {/* <Route path="/producto:id" element={ <ItemDetailContainer />}/> */}
+            <Route path="/cart" element={<Cart />}/>
+            {/* <Route path="*" element={<Error404 />}/> */}
+
+        </Routes>
+     
+  {/* <>
+        <header className="App-header">
+          <section>      </section>       </header>*/}
+
+          <div>
+            <ItemCount stock={10} initial={1} onAdd={onAdd}/>
+          </div>
+
+          {/* <div>
+            <CustomButton title="VER DETALLE"/>
+          </div> */}
+
+          {/* <p>
+            Keep moving forward!
+          </p>
+    */}
+      </div>
     </BrowserRouter>
   );
 }

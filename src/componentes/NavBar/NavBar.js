@@ -5,11 +5,11 @@ import "./NavBar.css";
 
 export const NavBar = () => {
 
-  const categoriaMenu = [
+  const categorias = [
     {id:1, link:"Inicio", route:"/"},
-    {id:2, link:"Tatuajes Grandes", route:"/categoria/grandes",},
-    {id:3, link:"Tatuajes Medianos", route:"/categoria/medianos"},
-    {id:4, link:"Tatuajes Pequeños", route:"/categoria/pequeños"}
+    {id:2, link:"Tatuajes Grandes", route:"/categorias/grandes",},
+    {id:3, link:"Tatuajes Medianos", route:"/categorias/medianos"},
+    {id:4, link:"Tatuajes Pequeños", route:"/categorias/pequeños"}
   ];
 
   return (
@@ -19,7 +19,7 @@ export const NavBar = () => {
               <img src={logo} alt="logotipo" />
             </Link>
 
-            {categoriaMenu.map((element)=>{
+            {categorias.map((element)=>{
             return <NavLink  key={element.id} to={element.route}>{element.link}</NavLink>
             })}
 

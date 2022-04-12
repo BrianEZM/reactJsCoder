@@ -4,7 +4,7 @@ import { ItemListContainer } from './componentes/ItemListContainer/ItemListConta
 import { NavBar } from './componentes/NavBar/NavBar';
 // import { CustomButton } from './componentes/CustomButton/CustomButton';
 import { ItemCount } from './componentes/ItemCount/ItemCount'
-import { ItemDetailContainer } from './componentes/ItemDetailContainer/ItemDetailContainer';
+// import { ItemDetailContainer } from './componentes/ItemDetailContainer/ItemDetailContainer';
 import { Cart } from './componentes/Cart/Cart';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -31,7 +31,7 @@ const App = () => {
         <Routes>
         
             <Route path="/" element={<ItemListContainer greeting={greeting}/>} />
-            <Route path="/categoriaMenu/:id" element={<ItemListContainer greeting={greeting}/>}/>
+            <Route path="/categorias/:id" element={<ItemListContainer greeting={greeting}/>}/>
             {/* <Route path="/producto:id" element={ <ItemDetailContainer />}/> */}
             <Route path="/cart" element={<Cart />}/>
             {/* <Route path="*" element={<Error404 />}/> */}

@@ -8,9 +8,9 @@ import { ItemList } from '../ItemList/ItemList';
 
 
 const productosIniciales = [
-    {title: "Tatuaje brazo", categoria: "grandes", id: 1, price: 5000, stock: 7, imag: "imgs/tatuajeBrazo.jpg"},
-    {title: "Tatuaje pierna", categoria: "medianos", id: 2, price: 6000, stock: 5, imag: "imgs/tatuajePierna.jpg"},
-    {title: "Tatuaje espalda", categoria: "pequeños", id: 3, price: 7000, stock: 3, imag: "imgs/tatuajeEspalda.jpg"},
+    {title: "Tatuaje brazo", categorias: "grandes", id: 1, price: 5000, stock: 7, imag: "imgs/tatuajeBrazo.jpg"},
+    {title: "Tatuaje pierna", categorias: "medianos", id: 2, price: 6000, stock: 5, imag: "imgs/tatuajePierna.jpg"},
+    {title: "Tatuaje espalda", categorias: "pequeños", id: 3, price: 7000, stock: 3, imag: "imgs/tatuajeEspalda.jpg"},
 ];
 
 const promesa1 = new Promise ((res, rej) => {
@@ -31,7 +31,10 @@ export const ItemListContainer = ({greeting}) => {
     useEffect(() => {
         setLoading(true)
         promesa1.then((productos) => {
+        
         // ACA VA EL FILTER O FIND
+        // const productosRouting = productos.filter(productosRouting => productosRouting.link === link)
+
         setProductos(productos);
         })
         .catch(() => {

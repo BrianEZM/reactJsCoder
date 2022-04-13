@@ -1,12 +1,12 @@
 
 
-export const Item = ({title,stock,price,imag}) => {
+export const Item = ({name,stock,price,imag}) => {
         
     
     return (
 
         <div>
-            <h1>Promo: {title}</h1>
+            <h1>Promo: {name}</h1>
             <h2>Cantidad: {stock}</h2>
             <p>Precio: {price}</p>
             <img src={imag} alt="imgDetalle"/>

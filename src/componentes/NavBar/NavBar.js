@@ -6,10 +6,9 @@ import "./NavBar.css";
 export const NavBar = () => {
 
   const categorias = [
-    {id:1, link:"Inicio", route:"/"},
-    {id:2, link:"Tatuajes Grandes", route:"/categorias/grandes",},
-    {id:3, link:"Tatuajes Medianos", route:"/categorias/medianos"},
-    {id:4, link:"Tatuajes Pequeños", route:"/categorias/pequeños"}
+    {id:1, name:"Tatuajes Grandes", route:"categorias/grandes",},
+    {id:2, name:"Tatuajes Medianos", route:"categorias/medianos"},
+    {id:3, name:"Tatuajes Pequeños", route:"categorias/pequeños"}
   ];
 
   return (
@@ -20,7 +19,7 @@ export const NavBar = () => {
             </Link>
 
             {categorias.map((element)=>{
-            return <NavLink  key={element.id} to={element.route}>{element.link}</NavLink>
+            return <NavLink  key={element.id} to={element.route}>{element.name}</NavLink>
             })}
 
           {/* 
@@ -32,7 +31,6 @@ export const NavBar = () => {
            <NavLink to="/cart"> 
                 <CartWidget /> 
            </NavLink>
-          
           </nav>
         </>
     );

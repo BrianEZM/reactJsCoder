@@ -9,15 +9,10 @@ import { Cart } from './componentes/Cart/Cart';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
-
-
-
 const App = () => {
 
   const greeting = "Bienvenido al proyecto Frankestein, esta en proceso de creación";
   
-
-
   const onAdd = (contador) => {
     console.log(`Agregaste ${contador} productos`)
   };
@@ -31,16 +26,12 @@ const App = () => {
         <Routes>
         
             <Route path="/" element={<ItemListContainer greeting={greeting}/>} />
-            <Route path="/categorias/:id" element={<ItemListContainer greeting={greeting}/>}/>
+            <Route path="/categorias/:name" element={<ItemListContainer greeting={greeting}/>}/>
             {/* <Route path="/producto:id" element={ <ItemDetailContainer />}/> */}
             <Route path="/cart" element={<Cart />}/>
             {/* <Route path="*" element={<Error404 />}/> */}
 
         </Routes>
-     
-  {/* <>
-        <header className="App-header">
-          <section>      </section>       </header>*/}
 
           <div>
             <ItemCount stock={10} initial={1} onAdd={onAdd}/>
@@ -50,10 +41,10 @@ const App = () => {
             <CustomButton title="VER DETALLE"/>
           </div> */}
 
-          {/* <p>
+          <p>
             Keep moving forward!
           </p>
-    */}
+
       </div>
     </BrowserRouter>
   );

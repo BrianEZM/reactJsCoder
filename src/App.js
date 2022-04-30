@@ -37,9 +37,7 @@ const App = () => {
             <ItemCount stock={10} initial={1} onAdd={onAdd}/>
           </div>
 
-          {/* <div>
-            <CustomButton title="VER DETALLE"/>
-          </div> */}
+
 
           <p>
             Keep moving forward!

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 export const Item = ({producto}) => {
     
     const url = `/id/${producto.id}`;
+    console.log(url);
     
     return (
 

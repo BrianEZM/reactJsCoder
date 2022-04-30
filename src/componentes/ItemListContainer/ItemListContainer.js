@@ -3,9 +3,6 @@ import { useParams } from 'react-router-dom';
 import { ItemList } from './ItemList/ItemList';
 
 
-// USAR MAP PARA RENDERIZAR EL ARRAY "PRODUCTOS" (KEY, ID)
-// DAR MENSAJE AL USUARIO MIENTRAS SE RENDERIZA EL ARRAY "PRODUCTOS"
-
 
 const productosIniciales = [
     {name: "Tatuaje brazo", 

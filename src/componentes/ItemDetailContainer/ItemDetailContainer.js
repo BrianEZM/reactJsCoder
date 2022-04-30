@@ -48,7 +48,8 @@ export const ItemDetailContainer = () => {
         promesa2.then((producto) => {
 
             if (id) {setProducto(producto.find(x => x.id === id))
-            }
+            };
+            console.log(id);
         
         })
         .catch(() => {
@@ -58,7 +59,7 @@ export const ItemDetailContainer = () => {
         })
     }, [id]);
 
-    
+
     return(
         <>
 

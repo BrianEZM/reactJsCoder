@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom"
-
+import { useContext } from "react";
+import { contexto } from "../../../../context/context";
+import customProvider from "../../../../context/context"
 
 export const Item = ({producto}) => {
     
     const url = `/id/${producto.id}`;
     console.log(url);
-    
+
+    const {usuarios} = useContext(contexto);
+    console.log(usuarios);
+
     return (
 
         <div>

@@ -4,48 +4,33 @@ import { useState } from "react";
 
 export const ItemCount = ({stock, initial, onAdd}) => {
 
-    const [contador, setContador] = useState(initial);
-    // const [restador, setRestador] = useState(0);
-    // const [reset, setReset] = useState(0);
+    const [count, setCount] = useState(initial);
 
-    const handlerClickSuma = () => {
-
-        if (contador >= initial && contador < stock){
-            setContador(contador + 1)}
-        //     else if (contador == 10){
-        //     setContador(10)
-        // }
-        // ejemplo de copia de array con useState:
-        // const [usuarios, setUsuarios] = useState([]);
-        // setUsuarios([...usuarios, (nombre: "pepi")]);
-        // SE RENDERIZA CON MAP
+    const handlerAdd = () => {
+        if (count >= initial && count < stock){
+            setCount(count + 1)}
     };
 
-    const handlerClickResta = () => {
-
-        if (contador > initial)
-        setContador(contador - 1)
+    const handlerSubtract = () => {
+        if (count > initial)
+        setCount(count - 1)
     };
 
-    const handlerClickReset = () => {
-
-        setContador(initial)
+    const handlerReset = () => {
+        setCount(initial)
     };
 
-    const handlerOnAdd = () => {
-
-        onAdd(contador);
+    const handlerAddToCart = () => {
+        onAdd(count);
     };
 
     return(
         <>
-            <h1>{contador}</h1>
-            <button onClick={handlerClickSuma}>Click Here to SUMAR</button>
-            {/* <h2>{restador}</h2> */}
-            <button onClick={handlerClickResta}>Click Here to RESTAR</button>
-            {/* <h3>{reset}</h3> */}
-            <button onClick={handlerClickReset}>Click Here to REINICIAR</button>
-            <button onClick={handlerOnAdd}>Click Here to ONADD</button>
+            <h1>{count}</h1>
+            <button onClick={handlerAdd}>Click Here to SUMAR</button>
+            <button onClick={handlerSubtract}>Click Here to RESTAR</button>
+            <button onClick={handlerReset}>Click Here to REINICIAR</button>
+            <button onClick={handlerAddToCart}>Click Here to ONADD</button>
         </>
 
     );

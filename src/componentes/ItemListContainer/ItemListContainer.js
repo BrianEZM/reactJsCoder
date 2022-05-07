@@ -8,23 +8,23 @@ console.log(db);
 
 
 
-const productosIniciales = [
+const initialProducts = [
     {name: "Tatuaje brazo", 
-    categorias: "grandes", 
+    category: "grandes", 
     id: 1, 
     price: 5000,
     stock: 7, 
     imag: "/imgs/tatuajeBrazo.jpg"},
 
     {name: "Tatuaje pierna", 
-    categorias: "medianos", 
+    category: "medianos", 
     id: 2, 
     price: 6000, 
     stock: 5, 
     imag: "/imgs/tatuajePierna.jpg"},
 
     {name: "Tatuaje espalda", 
-    categorias: "pequeños", 
+    category: "pequeños", 
     id: 3, 
     price: 7000, 
     stock: 3, 
@@ -33,13 +33,13 @@ const productosIniciales = [
 
 const promesa1 = new Promise ((res, rej) => {
     setTimeout(() => {
-    res(productosIniciales)
+    res(initialProducts)
 },2000)
 });
 
 export const ItemListContainer = ({greeting}) => {
 
-    const [productos, setProductos] = useState([]);
+    const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
 
     const {name} = useParams();
@@ -47,11 +47,11 @@ export const ItemListContainer = ({greeting}) => {
     useEffect(() => {
         setLoading(true)
 
-        promesa1.then((productos) => {
+        promesa1.then((products) => {
 
         if(name){
-            setProductos(productos.filter(producto => producto.categorias === name))
-        }else{ setProductos(productos);}
+            setProducts(products.filter(producto => producto.category === name))
+        }else{ setProducts(products);}
 
         })
         .catch(() => {
@@ -66,7 +66,7 @@ export const ItemListContainer = ({greeting}) => {
             <h1> {greeting} </h1>
 
             {loading ? <p>Loading, es decir ESPERE POR FAVOR</p> : 
-            <ItemList productos={productos}/> }
+            <ItemList products={products}/> }
         </>
     );
 };

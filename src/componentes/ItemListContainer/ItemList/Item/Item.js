@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom"
 import { useContext } from "react";
 import { contexto } from "../../../../context/context";
-import customProvider from "../../../../context/context"
 
-export const Item = ({producto}) => {
+export const Item = ({product}) => {
     
-    const url = `/id/${producto.id}`;
+    const url = `/id/${product.id}`;
     console.log(url);
 
     const {usuarios} = useContext(contexto);
@@ -14,10 +13,10 @@ export const Item = ({producto}) => {
     return (
 
         <div>
-            <h1>Promo: {producto.name}</h1>
-            <h2>Cantidad: {producto.stock}</h2>
-            <p>Precio: {producto.price}</p>
-            <img src={producto.imag} alt="imgDetalle"/>
+            <h1>Promo: {product.name}</h1>
+            <h2>Cantidad: {product.stock}</h2>
+            <p>Precio: {product.price}</p>
+            <img src={product.imag} alt="imgDetalle"/>
            {/* <Link to={url}>  </Link> */}
             <Link to={url}>
                 <button> Ver Detalles </button>

@@ -1,17 +1,26 @@
+import { ItemCount } from "../../ItemCount/ItemCount";
+import { Link } from "react-router-dom";
 
 
-export const ItemDetail = ({producto}) => {
+export const ItemDetail = ({product}) => {
+  
+  const onAdd = (contador) => {
+    console.log(`Agregaste ${contador} productos`)
+  };
 
-
-        return (
-    
+    return (
+        <>
             <div>
-                <h1>Promo DETALLADA: {producto.name}</h1>
-                <h2>Cantidad DETALLADA: {producto.stock}</h2>
-                <p>Precio DETALLADO: {producto.price}</p>
-                <img src={producto.imag} alt="imagenMuestra"/>
-                <h4>Caracteristicas DETALLADA: {producto.detalles}</h4>
+                <h1>Promo DETALLADA: {product.name}</h1>
+                <h2>Cantidad DETALLADA: {product.stock}</h2>
+                <p>Precio DETALLADO: {product.price}</p>
+                <img src={product.imag} alt="imagenMuestra"/>
+                <h4>Caracteristicas DETALLADA: {product.details}</h4>
             </div>
-    
+
+            <div>
+            <ItemCount stock={10} initial={1} onAdd={onAdd}/>
+            </div>
+        </>
         )
     };

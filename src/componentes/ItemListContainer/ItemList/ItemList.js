@@ -2,15 +2,15 @@ import {Item} from './Item/Item';
 
 
 
-export const ItemList = ({productos}) => {
+export const ItemList = ({products}) => {
 
  
     return (
         <>
-            {productos.map((producto) => {
+            {products.map((product) => {
                 return <Item 
-                key={producto.id} 
-                producto={producto}
+                key={product.id} 
+                product={product}
                 />
             })}
         </>

@@ -13,11 +13,6 @@ const App = () => {
 
   const greeting = "Bienvenido al proyecto Frankestein, esta en proceso de creación";
   
-
-
-  const onAdd = (contador) => {
-    console.log(`Agregaste ${contador} productos`)
-  };
     
   return (
 
@@ -35,12 +30,6 @@ const App = () => {
             {/* <Route path="*" element={<Error404 />}/> */}
 
         </Routes>
-
-          <div>
-            <ItemCount stock={10} initial={1} onAdd={onAdd}/>
-          </div>
-
-
 
           <p>
             Keep moving forward!

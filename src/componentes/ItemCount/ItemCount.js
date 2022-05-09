@@ -16,9 +16,9 @@ export const ItemCount = ({stock, initial, onAdd}) => {
         setCount(count - 1)
     };
 
-    const handlerReset = () => {
-        setCount(initial)
-    };
+    // const handlerReset = () => {
+    //     setCount(initial)
+    // };
 
     const handlerAddToCart = () => {
         onAdd(count);
@@ -29,7 +29,7 @@ export const ItemCount = ({stock, initial, onAdd}) => {
             <h1>{count}</h1>
             <button onClick={handlerAdd}>Click Here to SUMAR</button>
             <button onClick={handlerSubtract}>Click Here to RESTAR</button>
-            <button onClick={handlerReset}>Click Here to REINICIAR</button>
+            {/* <button onClick={handlerReset}>Click Here to REINICIAR</button> */}
             <button onClick={handlerAddToCart}>Click Here to ONADD</button>
         </>
 

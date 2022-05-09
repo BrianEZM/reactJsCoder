@@ -1,11 +1,18 @@
 import { ItemCount } from "../../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 
 export const ItemDetail = ({product}) => {
+
+  const [finalized, setFinalized] = useState(false);
+  // const {addProduct} = useContext(contexto);
   
-  const onAdd = (contador) => {
-    console.log(`Agregaste ${contador} productos`)
+  const onAdd = (count) => {
+    // addProduct(product,count);
+    console.log(`Agregaste ${count} productos`);
+    setFinalized(true);
+
   };
 
     return (
@@ -19,8 +26,14 @@ export const ItemDetail = ({product}) => {
             </div>
 
             <div>
-            <ItemCount stock={10} initial={1} onAdd={onAdd}/>
+              {!finalized ? (
+                <ItemCount onAdd={onAdd} stock={product.stock} initial={1} />
+                ) : (
+                <Link to="/cart">
+                  <button>Finalizar compra</button>
+                </Link>
+                )}
             </div>
         </>
         )
-    };
+      };

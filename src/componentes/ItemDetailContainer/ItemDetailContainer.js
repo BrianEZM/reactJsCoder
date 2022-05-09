@@ -49,7 +49,7 @@ export const ItemDetailContainer = () => {
 
             if (id) {setProduct(product.find(x => x.id === product.id.toString()))
             };
-                   
+    
         })
         .catch(() => {
             console.log("No funcionó");

@@ -1,17 +1,20 @@
 import { ItemCount } from "../../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-
+import { useContext } from "react";
+import { contexto } from "../../../CartContext/CartContext"
 
 export const ItemDetail = ({product}) => {
 
+  const { addProd, getTotalCart, isInCart, getCantidadProds } = useContext(contexto);
   const [finalized, setFinalized] = useState(false);
-  // const {addProduct} = useContext(contexto);
   
   const onAdd = (count) => {
-    // addProduct(product,count);
-    console.log(`Agregaste ${count} productos`);
-    setFinalized(true);
+        addProd(product, count);
+        setFinalized(false);
+        isInCart(product.id);
+        getTotalCart(product.price, count);
+        getCantidadProds();
 
   };
 

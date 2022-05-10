@@ -6,9 +6,9 @@ import "./NavBar.css";
 export const NavBar = () => {
 
   const categorias = [
-    {id:1, name:"Tatuajes Grandes", route:"categorias/grandes",},
-    {id:2, name:"Tatuajes Medianos", route:"categorias/medianos"},
-    {id:3, name:"Tatuajes Pequeños", route:"categorias/pequeños"}
+    {id:1, name:"Tatuajes Grandes", route:"category/grandes",},
+    {id:2, name:"Tatuajes Medianos", route:"category/medianos"},
+    {id:3, name:"Tatuajes Pequeños", route:"category/pequeños"}
   ];
 
   return (

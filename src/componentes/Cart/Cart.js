@@ -25,7 +25,7 @@ export const Cart = () => {
         }
     },[cart]);
     
-    const handleFinalize = () =>{
+    const handlerFinalize = () =>{
         setFinish(true);
         setEmptyCart(false);
         setNotProducts(false);
@@ -79,7 +79,7 @@ export const Cart = () => {
                 <p>{item.name}</p>
                 <p>{item.price}</p>
                 <p>{item.quantity}</p>
-                <button onClick={(()=>deleteElement(item.id))}></button>
+                <button> className='btnDeleteProduct' onClick={(()=>deleteElement(item.id))} </button>
             </li>
         )
     })
@@ -93,7 +93,7 @@ export const Cart = () => {
                     </div>
                     <p>Total: {total}</p>
                     <button className="btnCarrito clearCartBtn" onClick={clearCart}>Vaciar Carrito</button>
-                    <button className='btnCarrito finishBtn' onClick={handleFinalize}>Finalizar Compra</button>
+                    <button className='btnCarrito finishBtn' onClick={handlerFinalize}>Finalizar Compra</button>
                     <NavLink to={'/'}>
                         <button className='btnCarrito'>Volver al inicio</button>
                     </NavLink>

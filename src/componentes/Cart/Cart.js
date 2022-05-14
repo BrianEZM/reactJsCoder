@@ -62,14 +62,14 @@ export const Cart = () => {
         setNotProducts(true);
     }
 
-    const notify = () => toast.success('ID venta: ' + idSell, {
-        position: "bottom-right",
-        autoClose: 3500,
+    const notify = () => toast.success('ID venta: ' + idSell, 
+    {   position: "top-right",
+        autoClose: 2500,
+        progress: undefined,
         hideProgressBar: true,
-        closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
-        progress: undefined,
+        closeOnClick: true,
     });
     
     const cartProduct = cart.map((item)=>{
@@ -79,19 +79,19 @@ export const Cart = () => {
                 <p>{item.name}</p>
                 <p>{item.price}</p>
                 <p>{item.quantity}</p>
-                <button className='btnDeleteProduct' onClick={(()=>deleteElement(item.id))}></button>
+                <button onClick={(()=>deleteElement(item.id))}></button>
             </li>
         )
     })
     
     return(
-        <div className="cartContainer">                 
-            {    emptyCart && 
+        <div>                 
+            {emptyCart && 
                 <>
                     <div>
                         {cartProduct}
                     </div>
-                    <p>TOTAL: {total}</p>
+                    <p>Total: {total}</p>
                     <button className="btnCarrito clearCartBtn" onClick={clearCart}>Vaciar Carrito</button>
                     <button className='btnCarrito finishBtn' onClick={handleFinalize}>Finalizar Compra</button>
                     <NavLink to={'/'}>
@@ -99,8 +99,7 @@ export const Cart = () => {
                     </NavLink>
                 </> 
             }
-            {
-                notProducts &&
+            {notProducts &&
                 <>
                     <h1>No hay productos en el carrito</h1>
                     <NavLink to={'/'}>
@@ -108,13 +107,12 @@ export const Cart = () => {
                     </NavLink>
                 </>
             }
-            {
-                    finish && 
+            {finish && 
                 <>    
                     <FormVenta finishBuy={finishBuy}/>
                     <ToastContainer
                         position="bottom-right"
-                        autoClose={3500}
+                        autoClose={2500}
                         hideProgressBar
                         newestOnTop
                         closeOnClick

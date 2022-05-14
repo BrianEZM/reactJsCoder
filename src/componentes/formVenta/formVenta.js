@@ -9,9 +9,6 @@ const FormVenta = ({ finishBuy }) => {
         email: '',
         phone: '',
         emailConfirmation: '', 
-        numeroTarjeta: '',
-        fechaVec: '',
-        codSeg: ''
     })
 
     const getContactData = (e) => {
@@ -22,8 +19,8 @@ const FormVenta = ({ finishBuy }) => {
     }
 
     const finishPurchase = () => {
-        const { name, email, phone, numeroTarjeta, fechaVec, codSeg, apellido } = form
-        finishBuy({ name, email, phone, numeroTarjeta, fechaVec, codSeg, apellido });
+        const { name, email, phone, apellido } = form
+        finishBuy({ name, email, phone, apellido });
     }
 
     const disabled = !(
@@ -32,9 +29,6 @@ const FormVenta = ({ finishBuy }) => {
         form.emailConfirmation.length &&
         form.phone.length > 0 &&
         form.email === form.emailConfirmation &&
-        form.numeroTarjeta.length > 0 &&
-        form.fechaVec.length > 0 &&
-        form.codSeg.length > 0 &&
         form.apellido.length > 0
     )
 
@@ -46,18 +40,12 @@ const FormVenta = ({ finishBuy }) => {
                 <input placeholder="Juan" name="name" value={form.name} onChange={getContactData} type="text"/>
                 <label  htmlFor="apellido" className='labelForm'>Apellido:</label>
                 <input placeholder="Perez" name="apellido" value={form.apellido} onChange={getContactData} type="text"/>
-                <label htmlFor="email" className='labelForm'>Email:</label>
+                <label htmlFor="email" className='labelForm'>E-mail:</label>
                 <input placeholder="Email" name="email" value={form.email} onChange={getContactData} type="email"/>
                 <label htmlFor="phone" className='labelForm'>Telefono:</label>
                 <input placeholder="Teléfono" name="phone" value={form.phone} onChange={getContactData} type="text"/>
-                <label htmlFor="email" className='labelForm'>Email:</label>
+                <label htmlFor="email" className='labelForm'>Confirmación E-mail:</label>
                 <input placeholder="Confirma Email" name="emailConfirmation" value={form.emailConfirmation} onChange={getContactData} type="email"/>
-                <label htmlFor="numeroTarjeta" className='labelForm'>Numero de tarjeta:</label>
-                <input placeholder="XXXX-XXXX-XXXX-XXXX" name="numeroTarjeta" value={form.numeroTarjeta} onChange={getContactData} type="text"/>
-                <label htmlFor="fechaVec" className='labelForm'>Fecha de vencimiento:</label>
-                <input placeholder="01/01" name="fechaVec" value={form.fechaVec} onChange={getContactData} type="text"/>
-                <label htmlFor="codSeg" className='labelForm'>Fecha de vencimiento:</label>
-                <input placeholder="XXX" name="codSeg" value={form.codSeg} onChange={getContactData} type="text"/>
             </form>
             <button type="submit" className='btnCarrito btnPagar' disabled={disabled} onClick={finishPurchase}>Pagar</button>
         </div>

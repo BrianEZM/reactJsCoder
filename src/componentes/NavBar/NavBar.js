@@ -1,37 +1,46 @@
 import { CartWidget } from "../ItemListContainer/CartWidget";
 import { Link, NavLink } from 'react-router-dom';
-import logo from "../../imgMarca/marcaTat.jpg";
 import "./NavBar.css";
+import { Navbar, Container, Nav } from 'react-bootstrap';
 
-export const NavBar = () => {
-
-  const categorias = [
-    {id:1, name:"Tatuajes Grandes", route:"category/grandes",},
-    {id:2, name:"Tatuajes Medianos", route:"category/medianos"},
-    {id:3, name:"Tatuajes Pequeños", route:"category/pequeños"}
-  ];
+export const NavB = () => {
 
   return (
         <>
-          <nav className="navbar1">
-            <Link to="/">
-              <img src={logo} alt="logotipo" />
-            </Link>
 
-            {categorias.map((element)=>{
-            return <NavLink  key={element.id} to={element.route}>{element.name}</NavLink>
-            })}
+          <Navbar bg="dark" variant="dark" expand="lg">
+            <Container>
+              <Navbar.Brand href="#home">
+                <Link to="/" className="navLinks">
+                  <h1 className="navLinks">Tatuajes Nahuel</h1>
+                </Link>
+              </Navbar.Brand>
 
-          {/* 
-          <Link to='#'>{props.links[0]}</Link>
-          <Link to='#'>{props.links[1]}</Link>
-          <Link to='#'>{props.links[2]}</Link>
-          <Link to='#'>{props.links[3]}</Link>
-           */}
-           <NavLink to="/cart"> 
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+              <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="me-auto">
+
+              <Nav.Link href="#home">
+                <NavLink className="navText" id="1" to="category/grandes">Tatuajes Grandes</NavLink>
+              </Nav.Link>
+
+              <Nav.Link href="#home">
+                <NavLink className="navText" id="2" to="category/medianos">Tatuajes Medianos</NavLink>
+              </Nav.Link>
+
+              <Nav.Link href="#home">
+                <NavLink className="navText" id="3" to="category/pequeños">Tatuajes Pequeños</NavLink>
+              </Nav.Link>
+
+            <Nav.Link href="#link">
+            <NavLink className="navCart" to="/cart"> 
                 <CartWidget /> 
            </NavLink>
-          </nav>
-        </>
+        </Nav.Link>
+        </Nav>
+        </Navbar.Collapse>
+        </Container>
+        </Navbar>
+      </>
     );
 };

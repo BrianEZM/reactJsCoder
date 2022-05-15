@@ -44,7 +44,6 @@ export const ItemListContainer = ({greeting}) => {
     return (
         <>
             <h1> {greeting} </h1>
-
             { loading ? <p>Loading, es decir ESPERE POR FAVOR</p> : 
             <ItemList products={products}/> }
         </>

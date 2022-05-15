@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from "react";
 import { contexto } from "../../CartContext/CartContext";
 // import './Cart.css';
-// import DeleteIcon from '@mui/icons-material/Delete';
+import { AiFillDelete } from 'react-icons/ai';
 import { NavLink } from "react-router-dom";
 import { db } from '../../firebase/firebase';
 import {addDoc, collection, serverTimestamp, updateDoc, doc, increment} from "firebase/firestore";
@@ -13,7 +13,7 @@ export const Cart = () => {
 
     const {cart, deleteProd, clear, total} = useContext(contexto);
     const sellCollection = collection(db, "ventas");
-    const [idSell, setIdSell] = useState('');
+    const [idSell, setIdSell] = useState("");
     const [emptyCart, setEmptyCart] = useState(false);
     const [notProducts, setNotProducts] = useState(true);
     const [finish, setFinish] = useState(false);
@@ -79,7 +79,7 @@ export const Cart = () => {
                 <p>{item.name}</p>
                 <p>{item.price}</p>
                 <p>{item.quantity}</p>
-                <button> className='btnDeleteProduct' onClick={(()=>deleteElement(item.id))} </button>
+                <AiFillDelete> className='btnDeleteProduct' onClick={(()=>deleteElement(item.id))} </AiFillDelete>
             </li>
         )
     })

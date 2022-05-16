@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from "react";
 import { contexto } from "../../CartContext/CartContext";
-// import './Cart.css';
+import './cart.css';
 import { AiFillDelete } from 'react-icons/ai';
 import { NavLink } from "react-router-dom";
 import { db } from '../../firebase/firebase';

@@ -33,9 +33,9 @@ export const NavB = () => {
               </Nav.Link>
 
             <Nav.Link href="#link">
-            <NavLink className="navCart" to="/cart"> 
+         
                 <CartWidget /> 
-           </NavLink>
+          
         </Nav.Link>
         </Nav>
         </Navbar.Collapse>

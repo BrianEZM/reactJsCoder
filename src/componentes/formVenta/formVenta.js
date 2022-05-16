@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import './FormularioCompra.css';
+import './formVenta.css';
 
 const FormVenta = ({ finishBuy }) => {
     
@@ -33,19 +33,20 @@ const FormVenta = ({ finishBuy }) => {
     )
 
     return (
-        <div className='FormVenta'>
-            <h1>Ultimo pasos: </h1>
-            <form className='FormVentaCompra'>
+        <div className='formContainer'>
+            <h1>Ultimos pasos: </h1>
+            <form className='datosComprador'>
                 <label  htmlFor="name" className='labelForm'>Nombre:</label>
                 <input placeholder="Juan" name="name" value={form.name} onChange={getContactData} type="text"/>
                 <label  htmlFor="apellido" className='labelForm'>Apellido:</label>
                 <input placeholder="Perez" name="apellido" value={form.apellido} onChange={getContactData} type="text"/>
                 <label htmlFor="email" className='labelForm'>E-mail:</label>
                 <input placeholder="Email" name="email" value={form.email} onChange={getContactData} type="email"/>
-                <label htmlFor="phone" className='labelForm'>Telefono:</label>
-                <input placeholder="Teléfono" name="phone" value={form.phone} onChange={getContactData} type="text"/>
                 <label htmlFor="email" className='labelForm'>Confirmación E-mail:</label>
                 <input placeholder="Confirma Email" name="emailConfirmation" value={form.emailConfirmation} onChange={getContactData} type="email"/>
+                <label htmlFor="phone" className='labelForm'>Telefono:</label>
+                <input placeholder="Teléfono" name="phone" value={form.phone} onChange={getContactData} type="text"/>
+                
             </form>
             <button type="submit" className='btnCarrito btnPagar' disabled={disabled} onClick={finishPurchase}>Pagar</button>
         </div>

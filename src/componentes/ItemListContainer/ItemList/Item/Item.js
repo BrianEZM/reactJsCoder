@@ -10,7 +10,7 @@ export const Item = ({product}) => {
         <div className="prodContainer">
             <h1>Promo: {product.name}</h1>
             <h2>Cantidad: {product.stock}</h2>
-            <p>Precio: {product.price}</p>
+            <p>Precio: ${product.price}</p>
             <img src={product.imag} alt="imgDetalle"/>
             <Link to={url}>
                 <button className="btnDetalle"> Ver Detalles </button>

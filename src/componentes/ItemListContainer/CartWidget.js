@@ -6,21 +6,21 @@ import { contexto } from "../../CartContext/CartContext";
 export const CartWidget = () => {
 
     const {counter} = useContext(contexto);
-    const [emptyCart, setEmptyCart] = useState(false);
+    const renderCart = counter !== 0;
 
-    useEffect(()=>{
-        if(counter === 0){
-            setEmptyCart(false)
-        } else if(counter > 0){
-            setEmptyCart(true)
-        }
-    }, [counter]);
+    // useEffect(()=>{
+    //     if(counter === 0){
+    //         setEmptyCart(false)
+    //     } else if(counter > 0){
+    //         setEmptyCart(true)
+    //     }
+    // }, [counter]);
 
     return (
 
         <Link to='/cart'> 
             <FaOpencart/>
-            {emptyCart && <p className='cantCarrito'>{counter}</p>}
+            {renderCart && <p>{counter}</p>}
         </Link>
 
     );

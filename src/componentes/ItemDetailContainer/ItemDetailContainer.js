@@ -37,7 +37,7 @@ export const ItemDetailContainer = () => {
         <>
             <div className="container">
                 { loading ?
-                    <p>Loading, es decir ESPERE POR FAVOR</p>
+                    <p>CARGANDO, ESPERE POR FAVOR</p>
                     : 
                     error ? 
                     <h1>Lo sentimos, hubo un error</h1>

@@ -1,5 +1,5 @@
+import { NewReleases } from '@mui/icons-material';
 import { createContext, useState } from 'react';
-
 
 export const contexto = createContext();  
 const { Provider} = contexto;
@@ -11,45 +11,40 @@ const CustomProvider = ({children}) => {
     const [total, setTotal] = useState(0);
 
     const addProd = (prod, quantity)=>{
-        const newProd = {
-            ...prod,
-            quantity
-        }
-        if(isInCart(prod.id)){
-            const prodFind = cart.find(prod => prod.id === newProd.id);
-            const index = cart.indexOf(prodFind);
-            const aux = [...cart];
-            aux[index].quantity += quantity;
-            setCart(aux);
-        }else{
-            setCart([...cart, newProd]);
-            getTotalCart(Number(prod.price), prod.quantity);
-        }
-    };
-    const deleteProd = (id) => {
-        const listFiltrada = cart.filter((a) => a.id !== id);
-        setCart(listFiltrada);
-    };
-    const isInCart = (id) => {
-        const prodExistente = cart.find(prod => prod.id === id);
-        if(prodExistente){
-            return true;
-        } else {
-            return false;
-        }
+        const prodFind = cart.find(({id}) => id === prod.id);
+        const newProd = isInCart(prod.id)
+            ? {...prod, quantity: quantity + cart[cart.indexOf(prodFind)]?.quantity}
+            : {...prod, quantity};
+        const newCart = [newProd, ...cart.filter(({id}) => id !== prod.id)];
+        setCart([...newCart]);
+        setTotalPrice(Number(prod.price), newProd.quantity);
+        setCounter((prevValue) => prevValue + quantity);
     };
 
-    const getTotalCart = (price, quantity) => {
-        price = price * quantity;
-        setTotal(total + price);
+    const deleteProd = (id) => {
+        const listFiltrada = cart.filter((prod) => prod.id !== id);
+        setCart(listFiltrada);
+    };
+
+    const isInCart = (id) => {
+        const prodExistente = cart.find(prod => prod.id === id);
+        return !!prodExistente;
+    };
+
+    const setTotalPrice = (price, quantity) => {
+        const newPrice = price * quantity;
+        setTotal((previousTotal) => previousTotal + newPrice);
     }
     
     const getCantidadProds = () => {
             cart.forEach((prod) => {
-                setCounter(counter + prod.quantity);
-            });        
-            return counter;
-    };
+                setCounter((prevValue) => {
+                    console.log({prod, prevValue})
+                    return prevValue + prod.quantity
+                });
+                });
+                return counter
+            };
 
     const clear = () => {
         setCart([]);
@@ -58,7 +53,7 @@ const CustomProvider = ({children}) => {
     };
 
     return(
-        <Provider value={{cart, isInCart, addProd, deleteProd, getCantidadProds, counter, clear, total, getTotalCart}}>
+        <Provider value={{cart, isInCart, addProd, deleteProd, getCantidadProds, counter, clear, total, setTotalPrice}}>
             {children}
         </Provider>
     )

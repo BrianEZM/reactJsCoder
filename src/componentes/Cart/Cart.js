@@ -34,7 +34,7 @@ export const Cart = () => {
     const finishBuy = (comprador) => {
         addDoc(sellCollection, {
             comprador,
-            items: cart,
+            products: cart,
             date: serverTimestamp(),
             total: total
         })
@@ -72,14 +72,16 @@ export const Cart = () => {
         closeOnClick: true,
     });
     
-    const cartProduct = cart.map((item)=>{
+    const cartProduct = cart.map((product)=>{
         return(
-            <li className="listaCarrito" key={item.id}>
-                <img src={item.img} alt='foto-producto' className='img-carrito' />
-                <p>{item.name}</p>
-                <p>{item.price}</p>
-                <p>{item.quantity}</p>
-                <AiFillDelete> className='btnDeleteProduct' onClick={(()=>deleteElement(item.id))} </AiFillDelete>
+            <li className="listaCarrito" key={product.id}>
+                <img src={product.imag} alt='foto-producto' className='img-carrito' />
+                <p>{product.name}</p>
+                <p>{product.price}</p>
+                <p>{product.quantity}</p>
+                <button onClick={(()=>deleteElement(product.id))}>
+                    <AiFillDelete />
+                </button>
             </li>
         )
     })
@@ -91,11 +93,11 @@ export const Cart = () => {
                     <div>
                         {cartProduct}
                     </div>
-                    <p>Total: {total}</p>
-                    <button className="btnCarrito clearCartBtn" onClick={clearCart}>Vaciar Carrito</button>
-                    <button className='btnCarrito finishBtn' onClick={handlerFinalize}>Finalizar Compra</button>
+                    <p>Total: ${total}</p>
+                    <button onClick={clearCart}>Vaciar Carrito</button>
+                    <button onClick={handlerFinalize}>Finalizar Compra</button>
                     <NavLink to={'/'}>
-                        <button className='btnCarrito'>Volver al inicio</button>
+                        <button>Volver al inicio</button>
                     </NavLink>
                 </> 
             }
@@ -103,7 +105,7 @@ export const Cart = () => {
                 <>
                     <h1>No hay productos en el carrito</h1>
                     <NavLink to={'/'}>
-                        <button className='btnCarrito'>Volver al inicio</button>
+                        <button>Volver al inicio</button>
                     </NavLink>
                 </>
             }

@@ -1,5 +1,6 @@
 .App {
   background-color: darkgray;
+  height: 100%;
   display: flex;
   flex-direction: column;
   text-align: center;

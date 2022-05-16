@@ -7,9 +7,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import CustomProvider from "./CartContext/CartContext"
 import { Error404 } from "./componentes/Error404/Error404"
 
-
 const App = () => {
-
   const greeting = "Bienvenido a nuestro sitio web, gracias por tu visita";
     
   return (

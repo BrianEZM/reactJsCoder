@@ -1,4 +1,3 @@
-import { NewReleases } from '@mui/icons-material';
 import { createContext, useState } from 'react';
 
 export const contexto = createContext();  

@@ -1,0 +1,20 @@
+.btnCount {
+    margin: 1rem 2rem 
+
+}
+
+.contenedor1 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.contenedor2 {
+    display: flex;
+    flex-direction: row;
+}
+
+.contador {
+    height: 2rem;
+    width: 6rem;
+}

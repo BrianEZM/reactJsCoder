@@ -1,17 +1,20 @@
 # TATUAJES NAHUEL
 
-Este es el desafío final del curso de ReactJS de Coder House. Es un simulador de e-commerce, donde se ofrece el servicio de tatuajes.
+El presente es el desafío final del proyecto del curso ReactJS brindado por Coder House. 
+Es un simulador de e-commerce, donde se ofrece el servicio de tatuajes, permitiendo navegar por el sitio, agregar y quitar productos del carrito de compras, y por ultimo finalizar la compra remitiendo los datos de contacto.
 
-## Construido con 🛠️
+# Construido con 🛠️
 
-# React - El framework web usado
+## React - El framework web usado
 
-# React icons
+## React icons
 
-# Firebase - Firestore database
+## Firebase - Firestore database
 
-## Autor ✒️
+# Autor ✒️
 
-# Brian Zapata Marin - Alumno y potencial desarrollador web
+## Brian Zapata Marin - Alumno y potencial desarrollador web
 
-## Deploy
+# Deploy
+
+## https://react-js-coder-tatoo.vercel.app/

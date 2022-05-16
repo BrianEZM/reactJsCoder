@@ -74,7 +74,7 @@ export const Cart = () => {
     
     const cartProduct = cart.map((product)=>{
         return(
-            <li className="listaCarrito" key={product.id}>
+            <div className="prodContainer" key={product.id}>
                 <img src={product.imag} alt='foto-producto' className='img-carrito' />
                 <p>{product.name}</p>
                 <p>{product.price}</p>
@@ -82,7 +82,7 @@ export const Cart = () => {
                 <button onClick={(()=>deleteElement(product.id))}>
                     <AiFillDelete />
                 </button>
-            </li>
+            </div>
         )
     })
     

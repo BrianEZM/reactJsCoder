@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useContext } from "react";
 import { contexto } from "../../../CartContext/CartContext"
+import "./itemDetail.css"
 
 export const ItemDetail = ({product}) => {
 
@@ -19,12 +20,12 @@ export const ItemDetail = ({product}) => {
 
     return (
         <>
-            <div>
+            <div className="prodContainer">
                 <h1>Promo: {product.name}</h1>
                 <h2>Cantidad: {product.stock}</h2>
                 <p>Precio: {product.price}</p>
                 <img src={product.imag} alt="imagenMuestra"/>
-                <h5>Características: {product.Características}</h5>
+                <h3>Características: {product.Características}</h3>
             </div>
 
             <div>

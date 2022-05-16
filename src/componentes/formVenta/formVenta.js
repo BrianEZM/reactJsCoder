@@ -36,19 +36,19 @@ const FormVenta = ({ finishBuy }) => {
         <div className='formContainer'>
             <h1>Ultimos pasos: </h1>
             <form className='datosComprador'>
-                <label  htmlFor="name" className='labelForm'>Nombre:</label>
-                <input placeholder="Juan" name="name" value={form.name} onChange={getContactData} type="text"/>
-                <label  htmlFor="apellido" className='labelForm'>Apellido:</label>
-                <input placeholder="Perez" name="apellido" value={form.apellido} onChange={getContactData} type="text"/>
-                <label htmlFor="email" className='labelForm'>E-mail:</label>
-                <input placeholder="Email" name="email" value={form.email} onChange={getContactData} type="email"/>
-                <label htmlFor="email" className='labelForm'>Confirmación E-mail:</label>
-                <input placeholder="Confirma Email" name="emailConfirmation" value={form.emailConfirmation} onChange={getContactData} type="email"/>
-                <label htmlFor="phone" className='labelForm'>Telefono:</label>
+                <label  htmlFor="name" className='dataForm'>Nombre:</label>
+                <input placeholder="Nombre" name="name" value={form.name} onChange={getContactData} type="text"/>
+                <label  htmlFor="lastName" className='dataForm'>Apellido:</label>
+                <input placeholder="Apellido" name="apellido" value={form.apellido} onChange={getContactData} type="text"/>
+                <label htmlFor="email" className='dataForm'>E-mail:</label>
+                <input placeholder="E-mail" name="email" value={form.email} onChange={getContactData} type="email"/>
+                <label htmlFor="email" className='dataForm'>Confirmación E-mail:</label>
+                <input placeholder="Confirmar E-mail" name="emailConfirmation" value={form.emailConfirmation} onChange={getContactData} type="email"/>
+                <label htmlFor="phone" className='dataForm'>Telefono:</label>
                 <input placeholder="Teléfono" name="phone" value={form.phone} onChange={getContactData} type="text"/>
                 
             </form>
-            <button type="submit" className='btnCarrito btnPagar' disabled={disabled} onClick={finishPurchase}>Pagar</button>
+            <button type="submit" disabled={disabled} onClick={finishPurchase}>Pagar</button>
         </div>
     )
 }

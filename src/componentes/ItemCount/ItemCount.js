@@ -17,21 +17,20 @@ export const ItemCount = ({stock, initial, onAdd}) => {
         setCount(count - 1)
     };
 
-    // const handlerReset = () => {
-    //     setCount(initial)
-    // };
-
     const handlerAddToCart = () => {
         onAdd(count);
     };
 
     return(
         <>
-            <h1>{count}</h1>
-            <button onClick={handlerAdd}>Agregar producto</button>
-            <button onClick={handlerSubtract}>Quitar producto</button>
-            {/* <button onClick={handlerReset}>Click Here to REINICIAR</button> */}
-            <button onClick={()=>handlerAddToCart(count)} count={count}>Agregar al Carrito de compras</button>
+            <div className="contenedor1">
+                <div className="contenedor2">
+                    <button className="contador" onClick={handlerSubtract}>Restar</button>
+                    <h3>{count}</h3>
+                    <button className="contador" onClick={handlerAdd}>Sumar</button>
+                </div>
+                <button className="contador" onClick={()=>handlerAddToCart(count)} count={count}>Enviar al Carrito</button>
+            </div>
         </>
 
     );
